@@ -122,7 +122,7 @@ data:
                 </org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
                 <org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
                   <name>docker</name>
-                  <image>docker:dind</image>
+                  <image>docker:18-dind</image>
                   <privileged>true</privileged>
                   <alwaysPullImage>true</alwaysPullImage>
                   <command></command>
