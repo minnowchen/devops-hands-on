@@ -1,8 +1,3 @@
-#!/bin/sh
-###
-# MicroK8s + Rancher installer
-##
-
 # 輸入您的 email 
 EMAIL=
 
@@ -35,6 +30,8 @@ do
   sleep 10
   echo "Rancher 啟動中請稍候 ... "
 done
+
+sudo microk8s.kubectl patch $(sudo microk8s.kubectl get user.management.cattle.io -l authz.management.cattle.io/bootstrapping=admin-user -o name) --type='json' -p '[{"op":"replace","path":"/mustChangePassword","value":false},{"op":"replace","path":"/password","value":"$2a$10$7BhfjPOlS.KyLj81XMLWkO/ZH7JqeB1xeBmJzygZCHbD7Xni9Exy2"}]'
 
 echo "----------------------------------------"
 echo "安裝完成"
