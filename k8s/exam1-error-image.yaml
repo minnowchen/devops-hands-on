@@ -1,12 +1,12 @@
-apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: nginx-exam-deployment
 spec:
   selector:
     matchLabels:
       app: nginx
-  replicas: 1 # tells deployment to run 1 pods matching the template
+  replicas: 1
   template:
     metadata:
       labels:
@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:1.14.2
+        image: nginx-error-here:1.14.2 # fix me to nginx:1.14.2
         ports:
         - containerPort: 80
